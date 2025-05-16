@@ -1,0 +1,161 @@
+### **Hashing in Data Structure using JavaScript**
+#### **What is Hashing?**
+Hashing is a technique used in data structures to map data to a fixed-size value (hash code) using a hash function. It is primarily used for quick data retrieval. Hashing allows efficient searching, insertion, and deletion operations.
+
+A **hash function** takes an input (key) and converts it into a numeric hash code, which is then used to store the value in a **hash table**.
+
+#### **Why Use Hashing?**
+- **Fast Lookup:** Hashing provides constant time complexity O(1) for search, insert, and delete operations in ideal conditions.
+- **Efficient Data Storage:** Used for quick data retrieval in large datasets.
+- **Avoids Collision:** Good hash functions minimize the chances of two different keys getting the same hash code.
+- **Security:** Hashing is used in cryptography to store passwords securely.
+
+#### **Where to Use Hashing?**
+- **Databases** (Indexing, caching, lookup tables)
+- **Cryptography** (Password hashing, digital signatures)
+- **File systems** (Detect duplicate files using hash values)
+- **Networking** (Data integrity verification using hash functions)
+- **Compilers and Interpreters** (Symbol tables for variables and function names)
+- **Load Balancing** (Distributing workload using hash-based partitioning)
+
+#### **How is Hashing Beneficial?**
+- Reduces the time complexity of searching operations.
+- Ensures data security using cryptographic hash functions.
+- Optimizes memory usage in large-scale applications.
+- Prevents duplicate records in databases.
+
+---
+
+### **Hashing Example in JavaScript (Implementing a Simple Hash Table)**
+```javascript
+class HashTable {
+  constructor(size = 10) {
+    this.table = new Array(size);
+  }
+
+  _hash(key) {
+    let hash = 0;
+    for (let i = 0; i < key.length; i++) {
+      hash += key.charCodeAt(i);
+    }
+    return hash % this.table.length;
+  }
+
+  set(key, value) {
+    const index = this._hash(key);
+    if (!this.table[index]) {
+      this.table[index] = [];
+    }
+    this.table[index].push([key, value]);
+  }
+
+  get(key) {
+    const index = this._hash(key);
+    if (this.table[index]) {
+      for (let pair of this.table[index]) {
+        if (pair[0] === key) {
+          return pair[1];
+        }
+      }
+    }
+    return undefined;
+  }
+
+  remove(key) {
+    const index = this._hash(key);
+    if (this.table[index]) {
+      this.table[index] = this.table[index].filter(pair => pair[0] !== key);
+    }
+  }
+}
+
+// Example Usage
+const ht = new HashTable();
+ht.set("name", "Alice");
+ht.set("age", 25);
+console.log(ht.get("name")); // Output: Alice
+console.log(ht.get("age"));  // Output: 25
+ht.remove("age");
+console.log(ht.get("age"));  // Output: undefined
+```
+
+---
+
+### **Interview Questions and Answers on Hashing**
+
+#### **1. What is hashing, and why is it important?**
+👉 **Answer:**  
+Hashing is a technique used to map data to a fixed-size value using a hash function. It allows fast retrieval of data, making search, insert, and delete operations efficient. It is widely used in hash tables, cryptography, and database indexing.
+
+#### **2. What are some common applications of hashing?**
+👉 **Answer:**  
+- Implementing **hash tables** for quick lookups.
+- **Cryptographic hashing** for password storage.
+- **Database indexing** to speed up searches.
+- **Caching** to store frequently used data.
+- **Load balancing** to distribute network traffic.
+
+#### **3. What is a hash function?**
+👉 **Answer:**  
+A hash function is a function that takes an input (key) and returns a fixed-size numeric value (hash code). It should be:
+- **Deterministic** (Same input gives the same output)
+- **Fast to compute**
+- **Uniformly distributed** (Minimizes collisions)
+
+#### **4. What is a collision in hashing, and how can it be handled?**
+👉 **Answer:**  
+A **collision** occurs when two different keys produce the same hash code.  
+Collision handling techniques:
+1. **Chaining** – Store multiple values at the same index using linked lists.
+2. **Open Addressing** – Find the next available slot using methods like linear probing or quadratic probing.
+3. **Double Hashing** – Use a second hash function to resolve collisions.
+
+#### **5. What is the time complexity of hashing operations?**
+👉 **Answer:**  
+- **Best Case (No Collisions):** O(1)
+- **Average Case:** O(1) (If hash function is well designed)
+- **Worst Case (Many Collisions):** O(n) (In case of poor hash function)
+
+#### **6. How does a hash table work in JavaScript?**
+👉 **Answer:**  
+A hash table in JavaScript is an array-based data structure that stores key-value pairs. The key is passed through a hash function, which determines the index in the array where the value is stored.
+
+#### **7. What is the difference between hashing and encryption?**
+👉 **Answer:**  
+| Feature   | Hashing | Encryption |
+|-----------|---------|------------|
+| Purpose | Fast lookup, indexing, security | Secure data transmission |
+| Reversible? | No (one-way function) | Yes (can be decrypted) |
+| Usage | Hash tables, password storage | Data protection, secure messaging |
+
+#### **8. What are some commonly used hash functions?**
+👉 **Answer:**  
+- **MD5 (Message Digest Algorithm 5)**
+- **SHA-256 (Secure Hash Algorithm)**
+- **CRC32 (Cyclic Redundancy Check)**
+- **FNV-1 (Fowler-Noll-Vo Hash)**
+
+#### **9. What is perfect hashing?**
+👉 **Answer:**  
+Perfect hashing is a hashing technique where there are **no collisions**, meaning each key is uniquely mapped to an index.
+
+#### **10. What is the difference between a hash table and a map in JavaScript?**
+👉 **Answer:**  
+- **Hash Table:** A manually implemented key-value storage using an array and a hash function.
+- **Map (ES6):** A built-in JavaScript object (`Map`) optimized for key-value storage with built-in methods for efficiency.
+
+```javascript
+const map = new Map();
+map.set("name", "Alice");
+console.log(map.get("name")); // Output: Alice
+```
+
+---
+
+### **Conclusion**
+- Hashing is a **powerful technique** for fast data retrieval.
+- Used in databases, cryptography, caching, and networking.
+- Interview questions focus on **hash functions, collisions, time complexity, and use cases**.
+- JavaScript provides **Map** and **Set**, but custom hash tables can be implemented for learning and optimization.
+
+Would you like to practice more interview-style coding problems on hashing? 🚀

@@ -1,0 +1,238 @@
+# **Heap Data Structure in JavaScript**
+
+## **What is a Heap?**
+A **heap** is a specialized **binary tree-based** data structure that satisfies the **heap property**:
+- In a **Max Heap**, the parent node is always **greater** than or equal to its children.
+- In a **Min Heap**, the parent node is always **smaller** than or equal to its children.
+
+It is **commonly implemented using arrays** because of its efficiency in indexing elements.
+
+---
+
+## **Why Use a Heap?**
+1. **Efficient Priority Queue Implementation** – Insertions and deletions are done in **O(log n)** time.
+2. **Sorting Algorithm (Heap Sort)** – Provides an efficient way to sort numbers in **O(n log n)** time.
+3. **Dynamic Data Structure** – Unlike arrays, heaps efficiently handle priority-based operations.
+4. **Memory Efficient** – Since it's implemented using an array, it doesn't require extra pointers like linked lists.
+
+---
+
+## **Types of Heaps**
+### **1. Max Heap**
+- The **largest** element is at the root.
+- Every parent node is greater than its child nodes.
+
+**Example Max Heap:**
+```
+        50
+       /  \
+      30   40
+     /  \  /  \
+    10  20 35  15
+```
+
+### **2. Min Heap**
+- The **smallest** element is at the root.
+- Every parent node is smaller than its child nodes.
+
+**Example Min Heap:**
+```
+        10
+       /  \
+      20   15
+     /  \  /  \
+    30  40 50  35
+```
+
+---
+
+## **Where to Use Heaps?**
+### **Real-Life Applications**
+- **Priority Queues** (Used in job scheduling, Dijkstra’s algorithm, A* algorithm)
+- **Heap Sort** (Sorting technique used in databases)
+- **Memory Management** (Garbage collection in JavaScript uses heaps)
+- **Graph Algorithms** (Dijkstra's shortest path, Prim’s MST)
+- **Scheduling Tasks** (CPU scheduling, printer queue)
+- **Social Media Feed Ranking** (Facebook, Twitter use heaps for top N posts)
+- **Load Balancing** (Finding the server with the least load)
+
+---
+
+## **Heap Implementation in JavaScript**
+### **1. Min Heap Implementation**
+```javascript
+class MinHeap {
+  constructor() {
+    this.heap = [];
+  }
+
+  getParentIndex(index) {
+    return Math.floor((index - 1) / 2);
+  }
+
+  getLeftChildIndex(index) {
+    return 2 * index + 1;
+  }
+
+  getRightChildIndex(index) {
+    return 2 * index + 2;
+  }
+
+  swap(index1, index2) {
+    [this.heap[index1], this.heap[index2]] = [this.heap[index2], this.heap[index1]];
+  }
+
+  insert(value) {
+    this.heap.push(value);
+    this.heapifyUp();
+  }
+
+  heapifyUp() {
+    let index = this.heap.length - 1;
+    while (index > 0 && this.heap[index] < this.heap[this.getParentIndex(index)]) {
+      this.swap(index, this.getParentIndex(index));
+      index = this.getParentIndex(index);
+    }
+  }
+
+  extractMin() {
+    if (this.heap.length === 0) return null;
+    if (this.heap.length === 1) return this.heap.pop();
+
+    const min = this.heap[0];
+    this.heap[0] = this.heap.pop();
+    this.heapifyDown();
+    return min;
+  }
+
+  heapifyDown() {
+    let index = 0;
+    while (this.getLeftChildIndex(index) < this.heap.length) {
+      let smallerChildIndex = this.getLeftChildIndex(index);
+      if (this.getRightChildIndex(index) < this.heap.length &&
+          this.heap[this.getRightChildIndex(index)] < this.heap[smallerChildIndex]) {
+        smallerChildIndex = this.getRightChildIndex(index);
+      }
+
+      if (this.heap[index] < this.heap[smallerChildIndex]) break;
+
+      this.swap(index, smallerChildIndex);
+      index = smallerChildIndex;
+    }
+  }
+}
+
+// Example Usage
+const minHeap = new MinHeap();
+minHeap.insert(10);
+minHeap.insert(20);
+minHeap.insert(5);
+minHeap.insert(30);
+console.log(minHeap.extractMin()); // Output: 5
+console.log(minHeap.extractMin()); // Output: 10
+```
+
+---
+
+## **Interview Questions and Answers on Heap**
+
+### **1. What is a heap?**
+👉 **Answer:**  
+A **heap** is a **binary tree** that follows the **heap property**. In a **Min Heap**, the parent node is smaller than its children, whereas in a **Max Heap**, the parent node is greater than its children.
+
+---
+
+### **2. What is the time complexity of heap operations?**
+👉 **Answer:**
+| Operation    | Time Complexity |
+|-------------|----------------|
+| Insert      | O(log n)        |
+| Delete      | O(log n)        |
+| Extract Min/Max | O(log n)  |
+| Heapify     | O(log n)        |
+| Build Heap  | O(n)            |
+
+---
+
+### **3. How is a heap different from a binary search tree (BST)?**
+👉 **Answer:**  
+| Feature | Heap | Binary Search Tree (BST) |
+|---------|------|--------------------------|
+| Structure | Complete binary tree | Can be unbalanced |
+| Order | Min/Max heap property | Left child < Parent < Right child |
+| Search Time | O(n) | O(log n) |
+| Insertion/Deletion | O(log n) | O(log n) |
+
+---
+
+### **4. What are some real-life uses of heaps?**
+👉 **Answer:**  
+- **Priority Queue** (Task Scheduling, Printer Queue)
+- **Dijkstra’s Algorithm** (Shortest path in graphs)
+- **Heap Sort** (Efficient sorting algorithm)
+- **Load Balancing** (Cloud computing)
+- **Memory Allocation** (Garbage collection in programming)
+
+---
+
+### **5. What is heapify?**
+👉 **Answer:**  
+**Heapify** is the process of converting an unordered binary tree into a valid heap.
+
+- **Heapify Up** – Used when inserting a new element.
+- **Heapify Down** – Used when deleting the root node.
+
+---
+
+### **6. How do you implement a heap in JavaScript?**
+👉 **Answer:**  
+Heaps can be implemented using an **array**, where:
+- **Parent of node at index `i`** → `Math.floor((i - 1) / 2)`
+- **Left child of node at index `i`** → `2 * i + 1`
+- **Right child of node at index `i`** → `2 * i + 2`
+
+Example:
+```javascript
+class MinHeap {
+  constructor() {
+    this.heap = [];
+  }
+  insert(value) { /* Implementation */ }
+  extractMin() { /* Implementation */ }
+}
+```
+
+---
+
+### **7. How can you implement a priority queue using a heap?**
+👉 **Answer:**  
+A **priority queue** is implemented using a **heap** where elements with higher priority are dequeued first. A **Min Heap** can store elements such that the lowest priority element is dequeued first.
+
+---
+
+### **8. What is the worst-case time complexity of inserting `n` elements into an empty heap?**
+👉 **Answer:**  
+- If inserting one by one → **O(n log n)**
+- If building a heap using **heapify** → **O(n)** (more optimized)
+
+---
+
+### **9. What is the difference between a Min Heap and a Max Heap?**
+👉 **Answer:**  
+- **Min Heap** → Parent is **smaller** than children (root is the **smallest**).
+- **Max Heap** → Parent is **greater** than children (root is the **largest**).
+
+---
+
+### **10. What sorting algorithm uses heaps?**
+👉 **Answer:**  
+**Heap Sort**, which has a time complexity of **O(n log n)**.
+
+---
+
+## **Conclusion**
+- Heaps are used in **priority queues, scheduling, memory management, and graph algorithms**.
+- Operations like **insertion, deletion, and heapify** take **O(log n)** time.
+- **JavaScript can implement heaps using arrays** and **math-based indexing**.
+
+Would you like to practice coding problems on heaps? 🚀

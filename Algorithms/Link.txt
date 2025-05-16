@@ -1,0 +1,8 @@
+https://medium.com/@feelwjd/7-algorithms-in-javascript-1274dec046d1
+https://www.freecodecamp.org/news/introduction-to-algorithms-with-javascript-examples/
+https://www.geeksforgeeks.org/learn-algorithms-with-javascript-tutorial/
+
+Most asked Algorithm Sorting: 
+
+https://dev.to/christinamcmahon/common-sorting-algorithms-in-javascript-58a7
+https://www.linkedin.com/pulse/common-sorting-algorithms-using-javascript-md-nahid-hossain-4rgfc/

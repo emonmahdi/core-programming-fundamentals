@@ -1,0 +1,79 @@
+Graphs: 
+------------------
+Graph is a non-linear data structure. It contains a set of points known as vertics(or node) and a set of links known as edges. 
+
+node: every content or A block called node
+edge: two nodes connection line are called egde.
+
+example:  A-----B-----C-----D
+
+Types of Graph
+-------------------
+1. Directed: Edges have directions (one-way). A graph in which the edges have a direction  
+
+Example:  A---B----C   not the direction are traverse C---B---A not that
+
+2. Undirected: Edges are bidirectional (two-way). A graph in which the edges are bidirectional. The graph can be traversed in either direction.
+
+
+Graphs Usage: 
+--------------------
+Google Maps
+Social Media sites
+web pages
+
+
+Graph Representation
+----------------------
+Graphs can be represented in two main ways:
+
+Adjacency List → Stores nodes and their connections in an object or array (efficient for sparse graphs).
+Adjacency Matrix → Uses a 2D array to represent connections (efficient for dense graphs).
+
+
+
+Common Graph Traversal Algorithms
+-------------------------------
+Depth-First Search (DFS) → Uses a stack (or recursion) to explore as deep as possible before backtracking.
+Breadth-First Search (BFS) → Uses a queue to explore level by level.
+
+Questions
+------------------------
+
+Q: What is a graph data structure?
+A: A graph is a data structure consisting of a set of vertices (nodes) and a set of edges connecting these vertices.
+
+Q: How can we implement a graph in JavaScript?
+A: There are several ways to implement a graph in JavaScript, including using an adjacency matrix, an adjacency list, or an object-based representation.
+
+Q: What is an adjacency matrix?
+A: An adjacency matrix is a 2D array where the rows and columns represent vertices and the entries indicate whether there is an edge between the corresponding vertices.
+
+Q: What is an adjacency list?
+A: An adjacency list is a collection of arrays or linked lists where each array or linked list represents the neighbors of a vertex in the graph.
+
+Q: How can we traverse a graph in JavaScript?
+A: There are several ways to traverse a graph in JavaScript, including depth-first search (DFS) and breadth-first search (BFS).
+
+Q: What is DFS?
+A: DFS is a graph traversal algorithm that visits vertices in a depth-first manner, exploring as far as possible along each branch before backtracking.
+
+Q: What is BFS?
+A: BFS is a graph traversal algorithm that visits vertices in a breadth-first manner, exploring all the vertices at a given depth before moving on to vertices at the next depth.
+
+Q: How can we find the shortest path between two vertices in a graph?
+A: We can use BFS to find the shortest path between two vertices in an unweighted graph. For weighted graphs, we can use algorithms such as Dijkstra’s algorithm or the A* algorithm.
+
+Q: What is Dijkstra’s algorithm?
+A: Dijkstra’s algorithm is a shortest path algorithm that finds the shortest path between a source vertex and all other vertices in a weighted graph.
+
+Q: What is the A* algorithm?
+A: The A* algorithm is a shortest path algorithm that finds the shortest path between a source vertex and a destination vertex in a weighted graph by using a heuristic function to guide the search.
+
+
+
+
+Reference: 
+
+https://www.youtube.com/watch?v=bLtm94mvfjE
+https://javascripttoday.com/blog/graph-data-structure-in-javascript/

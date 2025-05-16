@@ -1,0 +1,87 @@
+1. What is a Linked List in JavaScript?
+
+The linked list in Javascript is a data structure that stores a collection of ordered data that can only be accessed sequentially. The data element (technically a node) consists of some information and a pointer. In contrast to an array, data elements in a linked list are not stored at contiguous memory locations and thus cannot be accessed randomly.
+
+
+A Linked List is a linear data structure where elements (nodes) are stored in memory in a non-contiguous manner. Each node contains two parts:
+
+Data - The value stored in the node.
+Next - A pointer/reference to the next node in the sequence.
+
+
+2. Types of Linked lists
+
+1. Singly Linked List
+This is the most basic linked list that we were discussing till now, it can be traversed only in one direction that is from start to end.
+
+    - Only one-directional access is allowed.
+
+
+2. Doubly Linked List
+
+The node of this linked list contains two pointers instead of one, making it possible to access the next as well as the previous node from the current node.
+
+    - We can access the linked list from both directions.
+    - We can insert a node before the current node easily.
+
+
+3. 3. Circular Linked List
+
+The last node of the linked list instead of pointing to null points to the first node.
+
+    - We can traverse this linked list in a sequential as well as circular manner.
+    - It is generally used in the queue-related concepts.
+
+
+Implementation: 
+
+
+Linked List: 
+class LinkedList {
+    constructor(head = null) {
+        this.head = head
+    }
+}
+
+
+Node: 
+
+class Node {
+    constructor(data) {
+        this.data = data
+        this.next = null                
+    }
+}
+
+
+Operations of a Linked List: 
+
+Since every user-defined data structure has its own operations, linked lists have a couple of their own as well. Listed Below are all the operations commonly performed on the linked list data structure.
+
+1. appendNode(node)
+2. insertAt(index)
+3. removeFrom(index)
+4. getNode(index)
+5. clear()
+6. reverse()
+
+
+
+Helper Methods
+We will need several helper methods so that object of this class can perform the required operation, we are going to discuss the implementation of those helper methods in detail. Use this JavaScript Beautifier to beautify your code.
+
+1. indexOf(element)
+2. isEmpty()
+3. listSize()
+4. getFirst()
+5. getLast()
+6. printList()
+
+
+
+
+Reference Links:
+
+1. https://www.scaler.com/topics/linked-list-in-javascript/
+2. https://medium.com/@andrewsouthard1/linked-list-in-javascript-634fc2e0897b
+3. https://www.geeksforgeeks.org/implementation-linkedlist-javascript/

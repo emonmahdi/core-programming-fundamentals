@@ -1,0 +1,89 @@
+A queue data structure is called a FIFO data structure: It’s a structure of sequentially ordered elements in which the first element to be removed will be the first element added to the queue.
+
+A queue data structure has two fundamental operations:
+
+enqueue—This operation is responsible for inserting or pushing a new element to the queue.
+dequeue—This operation is responsible for removing the oldest element from the queue.
+Similar to a stack, we have a linear data structure, which means that all the operations in a queue can only happen at one end of the structure, in this case, the beginning of the queue.
+
+JavaScript is a very helpful and handy language that provides us a lot of different methods to help us to achieve better results. The nice thing about JavaScript is that we also have a method to remove the first element of an array, which is the shift array method.
+
+The implementation of a queue in JavaScript gets very simple and powerful. We can define our queue array like the following:
+
+let stack = [];
+JavaScript
+Now we can create our enqueue operation to add an element to our queue, exactly the same as we did with the stack example. Create a function called enqueue and pass an argument to this function, like this:
+
+const enqueue = (item) => queue.push(item);
+JavaScript
+Now we can create the function to remove the first element of our queue. We will create a function called dequeue and this function will be responsible for removing the first element of our queue.
+
+const dequeue = () => queue.shift();
+JavaScript
+Pretty easy, huh? But there are some hidden differences that we might not notice at first, specifically about performance.
+
+Remember that both the push and pop methods have a time complexity of O(1)? The shift method has a time complexity of O(n).
+
+A simple difference in the time complexity of a piece of code can make a total difference in money, costs and performance for a company. If you’re planning to work with a queue data structure, the best possible idea is to create your own queue.
+
+function Queue() {
+  this.queue = {};
+  this.tail = 0;
+  this.head = 0;
+}
+
+// Add an element to the end of the queue.
+Queue.prototype.enqueue = function(element) {
+  this.queue[this.tail++] = element;
+}
+
+// Delete the first element of the queue.
+Queue.prototype.dequeue = function() {
+  if (this.tail === this.head)
+      return undefined
+
+  var element = this.queue[this.head];
+  delete element;
+  return element;
+}
+JavaScript
+Both stack and queue data structures are very flexible and easy to implement, but there are different use cases for each of them.
+
+A stack is useful when we want to add elements inside a list into sequential order and remove the last element added. A queue is useful when we want the same behavior, but instead of removing the last added element, we want to remove the first element added to the list
+
+=============================================
+
+Queue Interview Questions
+
+What is a queue?
+-------------------
+A queue is a linear data structure that follows the FIFO (First In, First Out) principle. The first element inserted is the first to be removed.
+
+Where is the queue data structure used?
+-----------------------------
+Scheduling tasks (OS process scheduling, printer queue)
+Handling requests in web servers
+BFS (Breadth-First Search) algorithm
+Messaging queues in distributed systems
+
+
+How can you implement a queue using an array in JavaScript?
+-------------------------------------
+Using push() to enqueue and shift() to dequeue.
+
+
+How can you implement a queue using a linked list?
+-----------------------------
+Instead of an array, use a linked list where the front points to the first node and the rear points to the last node.
+
+What is a priority queue?
+-------------------------
+A priority queue is a special type of queue where elements are dequeued based on priority instead of FIFO order.
+
+
+Time complexities of queue operations?
+-------------------------------
+enqueue() → O(1)
+dequeue() → O(n) in array, O(1) in linked list
+front() → O(1)
+isEmpty() → O(1)

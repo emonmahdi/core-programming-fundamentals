@@ -1,0 +1,32 @@
+Bubble Sort: 
+=================
+bubble sort algorithm compares every two adjacent values and swaps them if the first one is bigger than the second one. This reflects its name since the values tend to move up into the correct order, like bubbles rising to the surface.
+
+Selection sort
+==================
+The basic idea behind the selection sort algorithm is that is finds the minimum value in the data structure, places it in the first position, finds the second minimum value, places it in the second position, and so on.
+
+Insertion sort
+====================
+
+The insertion sort algorithm builds the final sorted array one value at a time. The process looks something like this:
+
+Assume the first element is already sorted.
+Compare the first and second elements - should the second value stay in its place or be inserted before the first value?
+Next, you can do a similar comparison with the third value - should it be inserted in the first, second, or third position? And so on...
+
+Merge sort
+================
+
+The merge sort algorithm is a divide-and-conquer algorithm. In other words, it divides the original array into smaller arrays until each small array has only one position, then it merges the smaller arrays into a bigger one that is sorted.
+
+
+Quick sort
+=======================
+
+
+The quick sort is one of the most used sorting algorithm. Similar to the merge sort, the quick sort also uses the divide-and-conquer approach. Let's break the process down into steps to understand it a little better since it's a bit more complex than the previous sorts we've covered:
+
+Select a value from the array that we will call pivot, generally the value at the middle of the array.
+Perform the partition operation which will result in an array with values lesser than the pivot on the left and greater on the right.
+Repeat the first two steps for each subarray (left and right) until the arrays are completely sorted.

@@ -1,0 +1,44 @@
+1. What is a Tree?
+A tree is a hierarchical data structure that consists of nodes connected by edges. It is a non-linear data structure used to represent relationships in a hierarchical manner.
+
+2. Key Terminologies
+Node: An element of a tree.
+Root: The topmost node of a tree.
+Parent: A node that has child nodes.
+Child: A node that has a parent.
+Sibling: Nodes that share the same parent.
+Leaf Node: A node that has no children.
+Depth: The level of a node in the tree (starting from 0 at the root).
+Height: The longest path from a node to a leaf.
+Subtree: A tree formed by any node and its descendants.
+Binary Tree: A tree where each node has at most two children.
+Binary Search Tree (BST): A binary tree where the left subtree contains nodes smaller than the root, and the right subtree contains nodes greater than the root.
+
+3. Types of Trees
+
+A. General Tree
+A tree where each node can have an unlimited number of children.
+
+B. Binary Tree
+A tree where each node has at most two children.
+
+C. Binary Search Tree (BST)
+A special type of binary tree where:
+
+    - Left child < Parent
+    - Right child > Parent
+
+D. Balanced Binary Search Tree
+A BST where the height is minimized (e.g., AVL Tree, Red-Black Tree).
+
+E. Heap (Min Heap & Max Heap)
+A complete binary tree where:
+
+    - Min Heap: Parent is smaller than children.
+    - Max Heap: Parent is larger than children.
+
+F. Trie (Prefix Tree)
+A tree used for efficient search and storage of strings.
+
+G. B-Trees
+Used in databases for indexing.
