@@ -1,0 +1,314 @@
+দারুণ! ✅
+তাহলে আমরা **Day 1 – Arrays** শুরু করছি আজই। লক্ষ্য:
+
+✅ Concept Clear
+✅ JavaScript Example
+✅ Real-Life Usage
+✅ Time Complexity
+✅ Interview MCQs + Coding Questions
+
+---
+
+# 🔥 Day 1: Arrays ( JavaScript )
+
+### ✅ Array কী?
+
+**Array** হল এমন একটি ডেটা স্ট্রাকচার যেখানে একাধিক ডেটা একসাথে sequential order-এ রাখা যায়।
+এটা এমন যেন **একটি বাক্সে অনেক জিনিস সিরিয়ালি রাখা**।
+
+```js
+const numbers = [10, 20, 30, 40];
+const names = ["Emon", "Mahdi", "Alif"];
+```
+
+---
+
+### ✅ কেন দরকার?
+
+* একই ধরনের ডেটা স্টোর করতে সুবিধা
+* দ্রুত index ভিত্তিক access করা যায়
+* বিভিন্ন ডেটা অপারেশন সহজ হয়
+
+---
+
+### ✅ Array Operations
+
+| Operation    | Description                | Example Code    | Time Complexity |
+| ------------ | -------------------------- | --------------- | --------------- |
+| Access       | Index দিয়ে element বের করা | arr[2]          | O(1)            |
+| Insert End   | push                       | arr.push(5)     | O(1)            |
+| Insert Start | unshift                    | arr.unshift(5)  | O(n)            |
+| Delete End   | pop                        | arr.pop()       | O(1)            |
+| Delete Start | shift                      | arr.shift()     | O(n)            |
+| Search Value | find                       | arr.includes(5) | O(n)            |
+| Loop         | traverse                   | for loop        | O(n)            |
+
+---
+
+## ✅ Practical Example
+
+### Access & Modify
+
+```js
+const arr = [5, 10, 15, 20];
+console.log(arr[2]); // 15
+arr[1] = 50;
+console.log(arr); // [5, 50, 15, 20]
+```
+
+### Add & Remove
+
+```js
+const nums = [1, 2, 3];
+nums.push(4);        // [1, 2, 3, 4]
+nums.pop();          // [1, 2, 3]
+nums.unshift(0);     // [0, 1, 2, 3]
+nums.shift();        // [1, 2, 3]
+```
+
+---
+
+## ✅ Traversing (Array loop)
+
+```js
+const arr = [10, 20, 30];
+
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+
+arr.forEach(item => console.log(item));
+
+for (let num of arr) {
+  console.log(num);
+}
+```
+
+---
+
+## ✅ Real Life Use Case
+
+ধরো তুমি Shopping Cart তৈরি করছো:
+
+```js
+const cart = ["Laptop", "Mouse"];
+cart.push("Keyboard");  // নতুন আইটেম যোগ
+console.log(cart);
+```
+
+---
+
+## ✅ Interview Questions (Theory)
+
+**Q1:** Array কী?
+**Ans:** Array হলো একটি linear data structure যেখানে index ভিত্তিতে multiple value store করা হয়।
+
+**Q2:** Array static না dynamic?
+**Ans:** JavaScript-এ dynamic, কিন্তু অন্য ভাষায় (C, Java) static।
+
+**Q3:** Push vs Unshift এর পার্থক্য কী?
+**Ans:** push শেষে element যোগ করে (fast), unshift শুরুতে যোগ করে (slow – shift লাগে)।
+
+---
+
+## ✅ Interview Coding Problems
+
+### ❗Q1: একটি array এর সব সংখ্যার যোগফল বের করো
+
+```js
+function sumArray(arr) {
+  let sum = 0;
+  for (let num of arr) {
+    sum += num;
+  }
+  return sum;
+}
+console.log(sumArray([2, 4, 6])); // Output: 12
+```
+
+---
+
+### ❗Q2: Array থেকে সবচেয়ে বড় সংখ্যা বের করো
+
+```js
+function findMax(arr) {
+  let max = arr[0];
+  for (let num of arr) {
+    if (num > max) max = num;
+  }
+  return max;
+}
+console.log(findMax([5, 9, 2, 7])); // Output: 9
+```
+
+---
+
+### ❗Q3: একটি উপাদান array তে আছে কি না খুঁজে বের করো
+
+```js
+function search(arr, target) {
+  for (let num of arr) {
+    if (num === target) return true;
+  }
+  return false;
+}
+console.log(search([1, 2, 3, 4], 3)); // true
+```
+
+---
+
+## ✅ Homework (Practice – বাধ্যতামূলক ✅)
+
+Solve these 👇
+
+1. Reverse an array manually (without reverse())
+2. Find second largest number
+3. Count even and odd numbers from array
+4. Remove duplicate values from array
+
+---
+
+### 👉 তুমি কি এখন **Day 1 Homework** solve করতে প্রস্তুত?
+
+চাও আমি কি **Step-by-step solve করে দেখাই**, নাকি **তুমি আগে try করবে তারপর আমি hint দেবো**? 😊
+
+--------------------------------------------
+ঠিক আছে ✅ আজ আমরা **Day 2 – Arrays (Core Concepts)** ব্রিফ আকারে কভার করবো। যদি পরে তুমি চাও, আমি প্রতিটি অংশ **detail + example + interview problem** দিয়ে বুঝিয়ে দিতে পারবো।
+
+---
+
+# ✅ Day 2 – Arrays (Full Concept Overview)
+
+### 🔥 What is Array?
+
+Array হলো **linear data structure** যেখানে একই টাইপ বা বিভিন্ন টাইপের ডাটা **indexwise** stored থাকে।
+JavaScript-এ array **dynamic** (size auto grow/shrink).
+
+```js
+let numbers = [10, 20, 30, 40];
+```
+
+---
+
+### ✅ Array Operations
+
+| Operation          | Method                | Time Complexity |
+| ------------------ | --------------------- | --------------- |
+| Access             | arr[i]                | O(1) ✅          |
+| Insert at end      | push()                | O(1) ✅          |
+| Delete at end      | pop()                 | O(1) ✅          |
+| Insert at start    | unshift()             | O(n) ❗          |
+| Delete at start    | shift()               | O(n) ❗          |
+| Search value       | includes(), indexOf() | O(n)            |
+| Traverse (loop)    | for/while             | O(n)            |
+| Remove middle item | splice()              | O(n)            |
+| Copy               | slice()               | O(n)            |
+
+---
+
+### ✅ Common Array Built-in Methods in JavaScript
+
+| Category   | Methods                           |
+| ---------- | --------------------------------- |
+| Add/Remove | push, pop, shift, unshift, splice |
+| Search     | indexOf, includes, find, filter   |
+| Transform  | map, reduce, forEach              |
+| Sort       | sort, reverse                     |
+| Others     | concat, slice, join               |
+
+---
+
+### ✅ Example Code
+
+```js
+let arr = [5, 10, 15];
+arr.push(20);      // [5,10,15,20]
+arr.pop();         // [5,10,15]
+arr.unshift(1);    // [1,5,10,15]
+arr.shift();       // [5,10,15]
+```
+
+---
+
+### ✅ Traversing an Array
+
+```js
+const arr = [10, 20, 30];
+
+// Standard loop
+for (let i = 0; i < arr.length; i++) console.log(arr[i]);
+
+// for...of
+for (let num of arr) console.log(num);
+
+// forEach
+arr.forEach(num => console.log(num));
+```
+
+---
+
+### ✅ Real Life Use Case of Arrays
+
+| Example       | Use                       |
+| ------------- | ------------------------- |
+| Shopping Cart | Product List রাখতে        |
+| Todo App      | Task list রাখতে           |
+| Social Media  | Post/Followers list রাখতে |
+
+---
+
+### ✅ Array Interview Theory Questions
+
+✅ Q1: JavaScript-এ array dynamic না static?
+➡️ Dynamic.
+
+✅ Q2: push vs unshift difference?
+➡️ push fast, unshift slow (because it shifts indexes).
+
+✅ Q3: Array কোন type structure?
+➡️ Linear data structure.
+
+---
+
+### ✅ Common Coding Problems (Must Practice)
+
+| Problem                | Difficulty |
+| ---------------------- | ---------- |
+| Find max/min number    | Easy       |
+| Reverse an array       | Easy       |
+| Sum of array           | Easy       |
+| Search an element      | Easy       |
+| Count even/odd numbers | Easy       |
+| Remove duplicates      | Medium     |
+| Two Sum problem        | Medium     |
+
+---
+
+### ✅ Day 2 Homework (Compulsory)
+
+Solve these:
+
+1. একটি array reverse করো **বিনা reverse() ব্যবহার করে**
+2. Array থেকে **duplicate remove** করো
+3. Array তে **second largest number** খুঁজে বের করো
+4. Array তে **target sum** এর দুইটা সংখ্যা খুঁজো (two-sum)
+
+---
+
+যদি তুমি চাও আমি **Day 2 – Full Class Detailed Version** দেবো যেখানে থাকবে:
+✅ Deep explanation
+✅ Visual learning
+✅ JavaScript code
+✅ Step-by-step solutions
+✅ 10 interview questions
+
+---
+
+### 👉 বলো, তুমি কি **Day 2 Detailed Class** চাও নাকি **আজ Day 3 তে যাবো?** 😊
+
+**Option দাও:**
+
+```
+A: Day 2 Detailed class চাই
+B: Next → Day 3 এ যেতে চাই
+```

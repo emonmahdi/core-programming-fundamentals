@@ -1,0 +1,225 @@
+ঠিক আছে ✅ এখন থেকে আমরা **Day 1 Class** শুরু করছি Step-by-Step। আজকের টপিক:
+
+# ✅ Day 1 – Time & Space Complexity (Big-O Notation)
+
+এটি DSA-এর ফাউন্ডেশন। যদি এটা পরিষ্কার না হয়, তাহলে বাকি সব জিনিস দুর্বল হয়ে থাকবে। তাই ভালোভাবে বুঝব **কনসেপ্ট + উদাহরণ + কোড + ইন্টারভিউ প্রশ্ন** দিয়ে।
+
+---
+
+## ✅ 1. Time Complexity কী?
+
+এটি বলে কোনো প্রোগ্রাম রান হতে **কত সময় লাগবে** তার গাণিতিক বিশ্লেষণ। সময় গোনা হয় **input size (n)** অনুযায়ী।
+
+➡️ আমরা **Big-O Notation** দিয়ে Time Complexity প্রকাশ করি।
+
+---
+
+## ✅ 2. Common Big-O Time Complexities
+
+| Complexity | Name        | Performance |
+| ---------- | ----------- | ----------- |
+| O(1)       | Constant    | Fastest ✅   |
+| O(log n)   | Logarithmic | Fast        |
+| O(n)       | Linear      | Good        |
+| O(n log n) | Log Linear  | Good        |
+| O(n²)      | Quadratic   | Slow ❗      |
+| O(2ⁿ)      | Exponential | Very Slow   |
+| O(n!)      | Factorial   | Worst ❌     |
+
+---
+
+## ✅ 3. Time Complexity Examples (JavaScript)
+
+### ✅ O(1) – Constant Time
+
+```js
+function getFirst(arr) {
+  return arr[0]; // সরাসরি access
+}
+```
+
+### ✅ O(n) – Linear Time
+
+```js
+function printAll(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]); // loop = O(n)
+  }
+}
+```
+
+### ✅ O(n²) – Quadratic Time
+
+```js
+function printPairs(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      console.log(arr[i], arr[j]); // nested loop
+    }
+  }
+}
+```
+
+### ✅ O(log n) – Logarithmic Time (Binary Search Idea)
+
+```js
+let n = 16; //Half হয়ে কমে
+while (n > 1) {
+  n = Math.floor(n / 2);
+}
+```
+
+---
+
+## ✅ 4. Space Complexity কী?
+
+Space Complexity বলে **memory usage** এর কথা।
+
+```js
+function sum(n) {
+  let result = 0;  // O(1) space
+  for (let i = 0; i < n; i++) {
+    result += i;
+  }
+  return result;
+}
+```
+
+✅ Space Complexity = **O(1)**
+
+---
+
+## ✅ 5. Rules of Big-O Simplification
+
+| Rule               | Example    | Result |
+| ------------------ | ---------- | ------ |
+| Constants drop     | O(2n)      | O(n)   |
+| Dominant term      | O(n² + n)  | O(n²)  |
+| Ignore small input | O(n + 100) | O(n)   |
+
+---
+
+## ✅ 6. Real Life Example
+
+| Scenario                   | Operation     | Time Complexity |
+| -------------------------- | ------------- | --------------- |
+| Bookshelf থেকে ১ম বই নেওয়া | Direct        | O(1)            |
+| নাম দিয়ে বই খোঁজা          | Linear search | O(n)            |
+| সাজানো বই অর্ধেক করে খোঁজা | Binary search | O(log n)        |
+
+---
+
+## ✅ 7. Interview Questions (Theory)
+
+**Q1: Big-O কেন ব্যবহার করি?**
+👉 কোডের পরফরম্যান্স measure করার জন্য।
+
+**Q2: Time vs Space Complexity?**
+👉 Time = execution time
+👉 Space = memory used
+
+**Q3: ভালো Complexity কোনটা?**
+👉 O(1), O(log n), O(n)
+
+---
+
+## ✅ 8. Interview Coding Tasks
+
+### ✅ Task 1: একটি loop এর complexity বলো
+
+```js
+for (let i = 0; i < n; i++) {
+  console.log(i);
+}
+```
+
+👉 Answer: **O(n)**
+
+---
+
+### ✅ Task 2: Nested loop complexity
+
+```js
+for (let i = 0; i < n; i++) {
+  for (let j = 0; j < n; j++) {
+    console.log(i, j);
+  }
+}
+```
+
+👉 Answer: **O(n²)**
+
+---
+
+### ✅ Task 3: Mixed
+
+```js
+function test(n) {
+  console.log("Hi"); // O(1)
+
+  for (let i = 0; i < n; i++) { // O(n)
+    console.log(i);
+  }
+
+  for (let j = 0; j < n; j++) { // O(n)
+    console.log(j);
+  }
+}
+```
+
+✅ Total = O(1 + n + n) = **O(n)**
+
+---
+
+## ✅ Day 1 Homework (Compulsory ✅)
+
+এই 4 টা answer দাও:
+
+1. নিচের কোডের time complexity বলো
+
+```js
+function fun(n) {
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < 5; j++) {
+      console.log(i, j);
+    }
+  }
+}
+```
+
+2. নিচের কোডের time complexity কত?
+
+```js
+function fun(n) {
+  let i = 1;
+  while (i < n) {
+    i = i * 2;
+  }
+}
+```
+
+3. নিচের কোডের space complexity বলো
+
+```js
+function sum(arr) {
+  let total = 0;
+  return total;
+}
+```
+
+4. Time complexity improve করা কেন জরুরি?
+
+---
+
+### 👉 এখন Homework Reply করো নিচে ✅
+
+লিখো:
+
+```
+Ans 1:
+Ans 2:
+Ans 3:
+Ans 4:
+```
+
+তারপর **Day 2 শুরু করবো – Arrays** 🚀

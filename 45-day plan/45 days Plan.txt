@@ -1,0 +1,232 @@
+শুরু করার আগে তুমি **Time** এবং **Problem Level** বলোনি। এগুলো ছাড়া আমি Day-by-Day Table সাজালে সেটা তোমার জন্য Personalize হবে না। তবুও তুমি যেহেতু **Day-by-Day DSA Plan Table** চেয়েছো, আমি **স্ট্যান্ডার্ড প্ল্যান** দিচ্ছি নিচে। পরে তুমি চাইলে এটা আমরা **তোমার সময় ও লেভেল অনুযায়ী কাস্টমাইজ** করবো ✅
+
+---
+
+# ✅ 45-Days DSA Master Plan (JavaScript)
+
+| Day                                          | Topic                   | Sub Topics                         |
+| -------------------------------------------- | ----------------------- | ---------------------------------- |
+| **Phase 1: Fundamentals + Arrays + Strings** |                         |                                    |
+| Day 1                                        | Time & Space Complexity | Big-O, Best/Average/Worst Case     |
+| Day 2                                        | Math Problems           | GCD, LCM, Prime Numbers, Fibonacci |
+| Day 3                                        | Arrays Basics           | Insert, Delete, Traverse           |
+| Day 4                                        | Arrays Problems         | Max/Min, Reverse, Search           |
+| Day 5                                        | Two Pointer Technique   | Pair sum, Sorted arrays            |
+| Day 6                                        | Sliding Window          | Subarray sum, longest substring    |
+| Day 7                                        | Strings Basics          | Palindrome, Anagram                |
+| **Phase 2: Linked List + Stack + Queue**     |                         |                                    |
+| Day 8                                        | Linked List Intro       | Singly Linked List                 |
+| Day 9                                        | Linked List Problems    | Middle, Reverse                    |
+| Day 10                                       | Doubly Linked List      | Operations                         |
+| Day 11                                       | Stack                   | Valid parentheses, Reverse string  |
+| Day 12                                       | Queue                   | Circular Queue, Priority Queue     |
+| Day 13                                       | Problem Day             | Mixed Problems                     |
+| Day 14                                       | Revision + Contest Day  | Practice                           |
+| **Phase 3: Hash & Set + Patterns**           |                         |                                    |
+| Day 15                                       | Hash Table              | Frequency counter                  |
+| Day 16                                       | Hash Problems           | Two-Sum, Group Anagram             |
+| Day 17                                       | Set                     | Remove duplicates                  |
+| Day 18                                       | Prefix Sum              | Subarray sum problems              |
+| Day 19                                       | Fast & Slow Pointer     | Linked list cycle                  |
+| Day 20                                       | Kadane’s Algorithm      | Max Subarray Sum                   |
+| Day 21                                       | Revision Day            | Problem Practice                   |
+| **Phase 4: Tree + BST**                      |                         |                                    |
+| Day 22                                       | Tree Basics             | BFS & DFS                          |
+| Day 23                                       | Binary Tree Traversal   | Pre/In/Post Order                  |
+| Day 24                                       | Tree Problems           | Height, Leaf count                 |
+| Day 25                                       | BST Basics              | Insert, Search, Delete             |
+| Day 26                                       | BST Problems            | Validate BST                       |
+| Day 27                                       | Revision Day            | Tree Practice                      |
+| **Phase 5: Heap + Trie**                     |                         |                                    |
+| Day 28                                       | Heap                    | Priority Queue                     |
+| Day 29                                       | Heap Problems           | Kth largest element                |
+| Day 30                                       | Trie Intro              | Insert/Search                      |
+| Day 31                                       | Trie Problems           | Prefix search                      |
+| Day 32                                       | Revision Day            | Mixed Heap + Trie                  |
+| **Phase 6: Graph Theory**                    |                         |                                    |
+| Day 33                                       | Graph Basics            | Adjacency List/Matrix              |
+| Day 34                                       | BFS & DFS               | Traversal                          |
+| Day 35                                       | Cycle Detection         | Directed/Undirected                |
+| Day 36                                       | Shortest Path           | Dijkstra                           |
+| Day 37                                       | Topo Sort               | Kahn's Algorithm                   |
+| Day 38                                       | MST                     | Kruskal + Union-Find               |
+| **Phase 7: Sorting + Searching**             |                         |                                    |
+| Day 39                                       | Searching               | Binary Search                      |
+| Day 40                                       | Sorting Basics          | Bubble/Selection/Insertion         |
+| Day 41                                       | Quick + Merge Sort      | Divide & Conquer                   |
+| Day 42                                       | Sorting Problems        | Custom sorting                     |
+| **Phase 8: Dynamic Programming + Greedy**    |                         |                                    |
+| Day 43                                       | DP Basics               | Memoization/Tabulation             |
+| Day 44                                       | DP Problems             | Fibonacci, Climbing stairs         |
+| Day 45                                       | Greedy Algorithms       | Coin change, Activity selection    |
+
+---
+
+## ✅ Delivery Format
+
+প্রতিদিন তুমি পাবে:
+✅ Concepts
+✅ Visual Explanation
+✅ JavaScript Examples
+✅ Interview Q&A
+✅ 5–10 Coding Problems
+
+---
+
+### ✅ আগের প্রশ্নটা আবার দিচ্ছি (এটা জরুরি):
+
+📌 Now reply:
+
+```
+Time: (Morning/Afternoon/Evening/Night)
+Level: (Beginner/Intermediate/Advanced)
+```
+
+👉 Example Reply:
+
+```
+Time: Night
+Level: Intermediate
+```
+
+এইটা দিলে আমি **Day 1 শুরু করে দেবো আজকেই** 🚀🔥
+------------------------------------------------------------------
+ঠিক আছে ✅ আজ আমরা **Day 2 – Arrays (Core Concepts)** ব্রিফ আকারে কভার করবো। যদি পরে তুমি চাও, আমি প্রতিটি অংশ **detail + example + interview problem** দিয়ে বুঝিয়ে দিতে পারবো।
+
+---
+
+# ✅ Day 2 – Arrays (Full Concept Overview)
+
+### 🔥 What is Array?
+
+Array হলো **linear data structure** যেখানে একই টাইপ বা বিভিন্ন টাইপের ডাটা **indexwise** stored থাকে।
+JavaScript-এ array **dynamic** (size auto grow/shrink).
+
+```js
+let numbers = [10, 20, 30, 40];
+```
+
+---
+
+### ✅ Array Operations
+
+| Operation          | Method                | Time Complexity |
+| ------------------ | --------------------- | --------------- |
+| Access             | arr[i]                | O(1) ✅          |
+| Insert at end      | push()                | O(1) ✅          |
+| Delete at end      | pop()                 | O(1) ✅          |
+| Insert at start    | unshift()             | O(n) ❗          |
+| Delete at start    | shift()               | O(n) ❗          |
+| Search value       | includes(), indexOf() | O(n)            |
+| Traverse (loop)    | for/while             | O(n)            |
+| Remove middle item | splice()              | O(n)            |
+| Copy               | slice()               | O(n)            |
+
+---
+
+### ✅ Common Array Built-in Methods in JavaScript
+
+| Category   | Methods                           |
+| ---------- | --------------------------------- |
+| Add/Remove | push, pop, shift, unshift, splice |
+| Search     | indexOf, includes, find, filter   |
+| Transform  | map, reduce, forEach              |
+| Sort       | sort, reverse                     |
+| Others     | concat, slice, join               |
+
+---
+
+### ✅ Example Code
+
+```js
+let arr = [5, 10, 15];
+arr.push(20);      // [5,10,15,20]
+arr.pop();         // [5,10,15]
+arr.unshift(1);    // [1,5,10,15]
+arr.shift();       // [5,10,15]
+```
+
+---
+
+### ✅ Traversing an Array
+
+```js
+const arr = [10, 20, 30];
+
+// Standard loop
+for (let i = 0; i < arr.length; i++) console.log(arr[i]);
+
+// for...of
+for (let num of arr) console.log(num);
+
+// forEach
+arr.forEach(num => console.log(num));
+```
+
+---
+
+### ✅ Real Life Use Case of Arrays
+
+| Example       | Use                       |
+| ------------- | ------------------------- |
+| Shopping Cart | Product List রাখতে        |
+| Todo App      | Task list রাখতে           |
+| Social Media  | Post/Followers list রাখতে |
+
+---
+
+### ✅ Array Interview Theory Questions
+
+✅ Q1: JavaScript-এ array dynamic না static?
+➡️ Dynamic.
+
+✅ Q2: push vs unshift difference?
+➡️ push fast, unshift slow (because it shifts indexes).
+
+✅ Q3: Array কোন type structure?
+➡️ Linear data structure.
+
+---
+
+### ✅ Common Coding Problems (Must Practice)
+
+| Problem                | Difficulty |
+| ---------------------- | ---------- |
+| Find max/min number    | Easy       |
+| Reverse an array       | Easy       |
+| Sum of array           | Easy       |
+| Search an element      | Easy       |
+| Count even/odd numbers | Easy       |
+| Remove duplicates      | Medium     |
+| Two Sum problem        | Medium     |
+
+---
+
+### ✅ Day 2 Homework (Compulsory)
+
+Solve these:
+
+1. একটি array reverse করো **বিনা reverse() ব্যবহার করে**
+2. Array থেকে **duplicate remove** করো
+3. Array তে **second largest number** খুঁজে বের করো
+4. Array তে **target sum** এর দুইটা সংখ্যা খুঁজো (two-sum)
+
+---
+
+যদি তুমি চাও আমি **Day 2 – Full Class Detailed Version** দেবো যেখানে থাকবে:
+✅ Deep explanation
+✅ Visual learning
+✅ JavaScript code
+✅ Step-by-step solutions
+✅ 10 interview questions
+
+---
+
+### 👉 বলো, তুমি কি **Day 2 Detailed Class** চাও নাকি **আজ Day 3 তে যাবো?** 😊
+
+**Option দাও:**
+
+```
+A: Day 2 Detailed class চাই
+B: Next → Day 3 এ যেতে চাই
+```

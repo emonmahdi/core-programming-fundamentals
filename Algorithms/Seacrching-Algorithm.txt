@@ -1,0 +1,31 @@
+🔍 What is a Searching Algorithm?
+A searching algorithm is used to find an element in a data structure like an array, list, or tree.
+
+💡 Common Searching Algorithms
+Linear Search
+
+Binary Search
+
+
+✅ 1. Linear Search
+Concept:
+Check each element in the array one by one until the target is found or the end is reached.
+
+Use Case:
+
+Useful when the array is unsorted
+
+Searching for a product by name in a small list
+
+
+✅ 2. Binary Search
+Concept:
+Divide and conquer. Only works on a sorted array. Compare the target with the middle value, and eliminate half of the array in each step.
+
+Use Case:
+
+Searching in large sorted datasets
+
+Searching user names from a sorted list
+
+Searching in a dictionary
