@@ -1,0 +1,83 @@
+1️⃣ Queue কী?
+
+Queue হলো এমন একটা Data Structure যেখানে ডাটা ঢোকে আর বের হয় First In First Out (FIFO) নিয়মে।
+
+মানে:
+যে ডাটা প্রথম ঢুকবে, সেটাই প্রথম বের হবে।
+
+2️⃣ রিয়েল লাইফ উদাহরণ:
+
+লম্বা লাইনে দাঁড়িয়ে কাউন্টার সার্ভিস নেওয়া
+প্রথমে যারা লাইনে আসে, তাদের আগে সার্ভিস দেওয়া হয়।
+নতুন আসা লোক লাইনের শেষের দিকে দাঁড়ায়।
+সার্ভিস নেওয়ার জন্য সামনে থেকে লোক বের হয়।
+
+3️⃣ Queue এর প্রধান কাজ
+Operation	কাজ
+enqueue	ডাটা লাইন শেষে ঢোকানো
+dequeue	লাইন থেকে ডাটা বের করা (সামনে থেকে)
+peek/front	প্রথম ডাটা দেখা
+isEmpty	খালি কিনা চেক করা
+4️⃣ JavaScript দিয়ে Simple Queue Implementation
+class Queue {
+  constructor() {
+    this.items = [];
+  }
+
+  // নতুন ডাটা লাইন শেষে ঢোকানো
+  enqueue(element) {
+    this.items.push(element);
+  }
+
+  // ডাটা সামনের দিক থেকে বের করা
+  dequeue() {
+    if (this.isEmpty()) return "Queue is empty";
+    return this.items.shift();
+  }
+
+  // সামনের ডাটা দেখা
+  front() {
+    if (this.isEmpty()) return "Queue is empty";
+    return this.items[0];
+  }
+
+  // খালি কিনা চেক করা
+  isEmpty() {
+    return this.items.length === 0;
+  }
+
+  size() {
+    return this.items.length;
+  }
+}
+
+5️⃣ Usage Example (Real Life এর মতো)
+const queue = new Queue();
+
+queue.enqueue("Person 1");
+queue.enqueue("Person 2");
+queue.enqueue("Person 3");
+
+console.log(queue.front()); // Person 1
+
+console.log(queue.dequeue()); // Person 1
+console.log(queue.dequeue()); // Person 2
+
+console.log(queue.size()); // 1
+
+6️⃣ Interview এ যেগুলো জিজ্ঞেস হয়
+Q1: Queue কি?
+
+A: FIFO data structure যেখানে প্রথম ঢোকা প্রথম বের হয়।
+
+Q2: Stack আর Queue এর পার্থক্য কী?
+
+A: Stack LIFO, Queue FIFO।
+
+Q3: Queue কোথায় ব্যবহার হয়?
+
+A: Print Queue, CPU task scheduling, Call Center support systems।
+
+Q4: Queue কিভাবে implement করা যায়?
+
+A: Array, Linked List, Circular Queue।

@@ -1,0 +1,242 @@
+ 
+
+---
+
+# 🔥 **Design Patterns (Complete Notes – Bangla + Real Life + Interview)**
+
+---
+
+# 🧠 **Design Pattern কী? (Top-level Definition)**
+
+### ✔️ Definition
+
+**Design Pattern হলো সফটওয়্যার ডেভেলপমেন্টে বারবার দেখা যায় এমন নির্দিষ্ট সমস্যার জন্য স্ট্যান্ডার্ড, পুনঃব্যবহারযোগ্য ও পরীক্ষিত সমাধান।**
+
+এগুলো কোন কোড নয় — বরং একটি **conceptual template**, যেটা code structure/design উন্নত করে।
+
+---
+
+# 🎯 **Design Patterns কেন ব্যবহার করা হয়?**
+
+### ✔️ কারণ:
+
+* কোড **clean**, **readable**, **flexible**, **maintainable** হয়
+* System-এ complex logic সহজভাবে control করা যায়
+* Developer team একসাথে কাজ করতে সুবিধা পায়
+* বারবার ব্যবহারযোগ্য architecture তৈরি হয়
+* Low-coupled, high-cohesion structure তৈরি হয় (Good software design)
+* Big enterprise systems-এ খুব প্রয়োজনীয়
+
+---
+
+# 🧩 **Design Pattern ঠিক কী সমস্যা সমাধান করে?**
+
+| Common Problem                   | Design Pattern Solution     |
+| -------------------------------- | --------------------------- |
+| Object তৈরি জটিল / repeated      | **Creational Patterns**     |
+| Objects-এর structure flexible না | **Structural Patterns**     |
+| Objects-এর interaction complex   | **Behavioral Patterns**     |
+| System-change করলে code break হয় | SOLID-friendly design       |
+| Coupling বেশি                    | Loose coupling              |
+| কোড reusable নয়                  | Standard reusable structure |
+
+---
+
+# 🏗️ **Design Pattern কখন ব্যবহার করবো?**
+
+* যখন object creation hard/complex
+* যখন দুই system interact করতে পারে না
+* যখন system-এর behaviour পরিবর্তন করতে হবে
+* যখন notification/event-based system বানাতে হবে
+* যখন maintainable & scalable project তৈরি করতে হবে
+* যখন বারবার একই pattern দেখা যায় real projects-এ
+
+---
+
+# ⭐ **Design Pattern এর ৩ টি প্রধান ক্যাটেগরি**
+
+---
+
+# 1️⃣ **Creational Design Patterns**
+
+👉 উদ্দেশ্য: **Object creation process কে flexible, reusable, safe করা।**
+
+## (A) Factory Pattern
+
+### ✔️ Definition:
+
+Factory object তৈরি করার responsibility নেয়, যাতে main code object creation থেকে free থাকে।
+
+### ✔️ Human Example:
+
+রেস্টুরেন্টে তুমি খাবারের নাম বলো → রান্নাঘর (Factory) খাবার তৈরি করে।
+
+### ✔️ Benefits
+
+* Loose coupling
+* Object creation hidden
+* Future change সহজ
+
+### ✔️ Interview Summary Answer
+
+**"Factory pattern object creation encapsulate করে, creation logic hide করে এবং future change safe করে।"**
+
+---
+
+## (B) Builder Pattern
+
+### ✔️ Definition:
+
+Complex object step-by-step বানানোর pattern।
+
+### ✔️ Real Life Example:
+
+Burger বানানো → bun → cheese → mayo → fries (step-by-step)
+
+### ✔️ Benefits:
+
+* Complex object creation control
+* Readable code
+* Optional parameters easy
+
+### ✔️ Interview Answer:
+
+**"Builder pattern জটিল object সহজে build করতে ব্যবহৃত হয়, especially যখন অনেক customization দরকার হয়।"**
+
+---
+
+# 2️⃣ **Structural Design Patterns**
+
+👉 উদ্দেশ্য: **Class এবং Object এর গঠন/relationship সহজ করা।**
+
+## (A) Adapter Pattern
+
+### ✔️ Definition:
+
+Two incompatible interface কে একসাথে কাজ করার মতো করে তোলে।
+
+### ✔️ Real Life:
+
+Mobile charger adapter — 220V → convert → phone charging
+
+### ✔️ Interview Answer:
+
+**"Adapter pattern incompatible interfaces কে connect করে, যেন তারা একসাথে কাজ করতে পারে।"**
+
+---
+
+## (B) Composite Pattern
+
+### ✔️ Definition:
+
+Individual Objects এবং group-of-objects কে একইভাবে handle করতে দেওয়া।
+
+### ✔️ Real Life:
+
+Windows Explorer
+
+* File
+* Folder (inside contains file + folder)
+
+### ✔️ Interview Answer:
+
+**"Composite pattern tree structure তৈরি করে এবং file-folder এর মতো uniform behavior দেয়।"**
+
+---
+
+# 3️⃣ **Behavioral Design Patterns**
+
+👉 উদ্দেশ্য: **Objects কিভাবে একে অন্যের সাথে communicate করবে তা define করা।**
+
+---
+
+## (A) Observer Pattern
+
+### ✔️ Definition:
+
+One-to-many dependency: একটি object change হলে অন্য object গুলো automatically notify হয়।
+
+### ✔️ Real-Life Example:
+
+YouTube — channel new video → subscribers get notifications
+
+### ✔️ Interview Answer:
+
+**"Observer pattern publish–subscribe mechanism implement করে, যেখানে subscriber-রা automatic update পায়।"**
+
+---
+
+## (B) Strategy Pattern
+
+### ✔️ Definition:
+
+একটি behavior এর multiple algorithm থাকে। আমরা runtime-এ algorithm পরিবর্তন করতে পারি।
+
+### ✔️ Real-Life:
+
+Google Maps route change
+
+* Fastest
+* Shortest
+* No highway
+
+### ✔️ Interview Answer:
+
+**"Strategy pattern runtime এ algorithm change করতে দেয়, system flexible রাখে।"**
+
+---
+
+# ⭐ **BONUS: Most Important Patterns (Interview Focus)**
+
+## 🎯 Singleton Pattern
+
+Only one instance of class (e.g., DB connection)
+
+## 🎯 Prototype Pattern
+
+Object clone → new object creation fast
+
+## 🎯 Decorator Pattern
+
+Existing class modify না করেই নতুন feature add করা।
+
+## 🎯 Facade Pattern
+
+Complex system কে simple interface দিয়ে wrap করা।
+
+---
+
+# 📝 **TOP INTERVIEW QUESTIONS (with short answers)**
+
+### ✔️ Q1: What is a design pattern?
+
+**Reusable, tested solution for recurring software design problems.**
+
+### ✔️ Q2: Factory vs Builder?
+
+* Factory → simple object creation
+* Builder → complex, step-by-step creation
+
+### ✔️ Q3: Adapter vs Facade?
+
+* Adapter → interface conversion
+* Facade → simplify complex interface
+
+### ✔️ Q4: Singleton real use?
+
+**Database connection, log manager, config manager**
+
+### ✔️ Q5: Strategy vs State?
+
+* Strategy → switch algorithms
+* State → switch behaviour based on state
+
+### ✔️ Q6: Observer real use?
+
+**Notifications, Events, Stock update, chat systems**
+
+### ✔️ Q7: Composition vs Inheritance?
+
+Use **composition** → reduces coupling, safer and flexible.
+
+--- 

@@ -1,0 +1,88 @@
+Stack কী?
+
+Stack হলো এমন একটা ডাটা স্ট্রাকচার যেখানে ডাটা ঢোকে এবং বের হয় শেষ-প্রথম (LIFO) নিয়মে। অর্থাৎ, যেটা শেষ ঢুকেছে, সেটা প্রথম বের হবে।
+
+Stack কেন ব্যবহার?
+
+Undo/Redo অপারেশন (যেমন: Text editor)
+Browser back button
+Function call handling (Call stack)
+Expression evaluation (যেমন: Parentheses check)
+
+Interview Q&A
+Q1: Stack কি?
+
+A: Last In First Out (LIFO) ডাটা স্ট্রাকচার।
+
+Q2: Stack এর প্রধান অপারেশন কী কী?
+
+A: push (ডাটা ঢোকানো), pop (ডাটা বের করা), peek (শীর্ষের ডাটা দেখা), isEmpty (খালি কিনা চেক করা)।
+
+Q3: Stack কোথায় ব্যবহার হয়?
+
+A: Undo, browser history, function calls, expression evaluation।
+
+Q4: Stack কিভাবে implement করা যায়?
+
+A: Array বা Linked List দিয়ে।
+
+Q5: Stack overflow কী?
+
+A: Stack যখন পূর্ণ তখন আর ডাটা ঢোকানো যায় না।
+
+
+Real Life Example:
+
+Browser Back Button
+যখন তুমি ওয়েবসাইটে ঘুরো, ব্রাউজার তোমার ভিজিট করা পেজগুলো একটা Stack-এ রাখে।
+
+নতুন পেজে গেলে সেটা Stack-এ push হয়।
+
+Back বাটন দিলে শেষ যে পেজ এ গিয়েছিলে সেটা pop হয়।
+
+JavaScript Example: Browser History Simulation (Stack)
+class BrowserHistory {
+  constructor() {
+    this.stack = [];
+  }
+
+  visit(page) {
+    this.stack.push(page);
+    console.log(`Visited: ${page}`);
+  }
+
+  back() {
+    if (this.stack.length === 0) {
+      console.log("No pages to go back to.");
+      return;
+    }
+    const lastPage = this.stack.pop();
+    console.log(`Went back from: ${lastPage}`);
+  }
+
+  currentPage() {
+    if (this.stack.length === 0) {
+      console.log("No pages visited yet.");
+      return;
+    }
+    console.log(`Current page: ${this.stack[this.stack.length - 1]}`);
+  }
+}
+
+// Usage:
+const browser = new BrowserHistory();
+
+browser.visit("google.com");
+browser.visit("github.com");
+browser.currentPage(); // Current page: github.com
+
+browser.back(); // Went back from: github.com
+browser.currentPage(); // Current page: google.com
+
+এই কোডে:
+
+visit(page) → নতুন পেজে যাওয়া (push)
+
+back() → আগের পেজে যাওয়া (pop)
+
+currentPage() → এখন যে পেজে আছো (peek)

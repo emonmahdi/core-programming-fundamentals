@@ -1,0 +1,61 @@
+Array কী? (Definition)
+
+Array হলো একটি ডাটা স্ট্রাকচার যেখানে
+👉 একই টাইপের একাধিক ডাটা
+👉 Sequential memory তে
+👉 Index দিয়ে access করা যায়
+
+
+Example: 
+
+let arr = [10, 20, 30, 40];
+
+Index শুরু হয়: 0
+arr[0] = 10
+arr[3] = 40
+
+কেন Array ব্যবহার করি? (WHY)
+
+# Array ব্যবহার করি যখন:
+
+✅ Ordered data দরকার
+✅ Fast access দরকার
+✅ Fixed / semi-dynamic size acceptable
+✅ List / collection handle করতে হবে
+
+# Array কোথায় ব্যবহার হয়? (Industry Use)
+
+| Industry Area | Example                 |
+| ------------- | ----------------------- |
+| Frontend      | Product list, Todo list |
+| Backend       | API response            |
+| Database      | Query result            |
+| System        | Buffer, cache           |
+| UI            | Table, grid, chart      |
+
+
+# Memory Concept (VERY IMPORTANT 🔥)
+
+Array এর data continuous memory তে থাকে
+
+# Important Array Methods (Industry Use):
+
+| Method   | Use          |
+| -------- | ------------ |
+| push     | add end      |
+| pop      | remove end   |
+| shift    | remove start |
+| unshift  | add start    |
+| map      | transform    |
+| filter   | condition    |
+| reduce   | calculation  |
+| find     | first match  |
+| includes | check        |
+
+
+
+# Problem Solving Array:
+
+Problem 1: Reverse an Array
+Problem 2: Find Maximum Number
+Problem 3: Remove Duplicates
