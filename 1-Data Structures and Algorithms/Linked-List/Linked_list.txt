@@ -1,0 +1,63 @@
+১. Linked List কী? (What is Linked List?)
+সহজ ভাষায়: Linked List হলো data রাখার একটা উপায়, যেখানে প্রতিটা element (যাকে Node বলে) একটা chain এর মতো একে অপরের সাথে connected থাকে।
+
+Linked List হলো একটা linear data structure যেখানে elements গুলো memory তে scattered (ছড়িয়ে ছিটিয়ে) থাকে এবং pointer দিয়ে connected থাকে।
+
+Real Life Example:
+ধরো, একটা ট্রেনের কথা চিন্তা করো। প্রতিটা বগি (compartment) আলাদা, কিন্তু একটা বগি পরের বগির সাথে connected। এভাবেই Linked List কাজ করে!
+
+[বগি ১] → [বগি ২] → [বগি ৩] → [বগি ৪] → null
+
+২. কেন Linked List ব্যবহার করবো? (Why use?)
+
+Array vs Linked List:
+
+Array এর সমস্যা:
+
+Size fixed থাকে (আগে থেকে বলে দিতে হয়)
+মাঝখানে element add/delete করতে গেলে সব shift করতে হয়
+Memory তে একসাথে জায়গা লাগে
+
+Linked List এর সুবিধা:
+
+Dynamic size (যতখুশি বড় করতে পারবে)
+মাঝখানে insert/delete করা সহজ
+Memory তে যেকোনো জায়গায় থাকতে পারে
+
+
+৩. Node কী? (Basic Building Block)
+
+Node হলো Linked List এর basic building block।
+
+
+প্রতিটা Node এ দুইটা অংশ থাকে:
+
+Data: যে value রাখবে
+Next: পরের Node এর address/reference
+
+4: Linked List এর types কয়টি ও কী কী?
+উত্তর:
+
+Singly Linked List: এক দিকে যেতে পারে (next pointer)
+Doubly Linked List: দুই দিকে যেতে পারে (next + prev pointer)
+Circular Linked List: শেষ node আবার প্রথম node কে point করে
+
+
+5: Linked List এর advantage এবং disadvantage কী?
+উত্তর:
+Advantages:
+
+Dynamic size (runtime এ size বাড়ানো কমানো যায়)
+Insert/Delete efficient (O(1) শুরুতে)
+Memory efficient (exact যতটুকু লাগে ততটুকু)
+
+Disadvantages:
+
+Random access নেই (index দিয়ে সরাসরি যাওয়া যায় না)
+Extra memory লাগে pointer এর জন্য
+Traverse করতে সময় লাগে
+Cache friendly না (memory scattered)
+
+6: Head pointer কী? কেন দরকার?
+উত্তর:
+Head pointer হলো Linked List এর শুরুর node এর reference। এটা ছাড়া আমরা পুরো list হারিয়ে ফেলবো, কারণ প্রতিটা node শুধু পরের node জানে।
