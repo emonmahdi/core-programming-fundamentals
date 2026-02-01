@@ -1,0 +1,69 @@
+১. Queue কি?
+
+Queue হলো একটি Linear Data Structure যেখানে ডেটা FIFO (First In First Out) নিয়মে কাজ করে। মানে যে ডেটা আগে ঢুকবে, সেই আগে বের হবে।
+বাস্তব জীবনের উদাহরণ:
+
+- টিকিট কাউন্টারে দাঁড়ানো লাইন - যে আগে আসে, সে আগে টিকিট পায়
+- প্রিন্টার কিউ - যে ডকুমেন্ট আগে পাঠানো হয়, সেটা আগে প্রিন্ট হয়
+- কল সেন্টার - যে আগে কল করে, তার কল আগে রিসিভ হয়
+
+২. Queue কেন ব্যবহার করবেন?
+
+প্রধান কারণগুলো:
+
+- Order Maintain করা: যেখানে First Come First Serve প্রয়োজন
+- Task Scheduling: একের পর একটি কাজ করার জন্য
+- Buffering: ডেটা টেম্পোরারি স্টোর করার জন্য
+- BFS Algorithm: Tree/Graph traversal এ
+- Asynchronous Data Transfer: যেমন IO operations
+
+৩. Queue এর মূল Operations
+
+Basic Operations:
+
+- Enqueue: শেষে নতুন element যোগ করা
+- Dequeue: প্রথম element বের করা
+- Peek/Front: প্রথম element দেখা (বের না করে)
+- isEmpty: Queue খালি কিনা চেক করা
+- Size: Queue তে কতগুলো element আছে
+
+
+## 4. Queue এর Benefits (সুবিধা)
+
+1. FIFO নিশ্চিত করে: Fair processing হয়
+2. Organized: ডেটা systematic ভাবে handle হয়
+3. Prevents Race Conditions: একটার পর একটা execute হয়
+4. Memory Efficient: শুধু প্রয়োজনীয় ডেটা রাখে
+5. Easy to Implement: সহজে code করা যায়
+
+## 5. Queue এর Limitations (সীমাবদ্ধতা)
+
+1. Middle Access নেই: শুধু front/rear access করা যায়
+2. Search Inefficient: একটা element খুঁজতে O(n) সময় লাগে
+3. Fixed Size: Array দিয়ে করলে size limit থাকে
+
+## 6. Interview Questions & Answers
+
+### প্রশ্ন ১: Queue এবং Stack এর মধ্যে পার্থক্য কি?
+
+উত্তর: 
+
+Queue:
+- FIFO (First In First Out)
+- দুই প্রান্ত: Front (dequeue) এবং Rear (enqueue)
+- উদাহরণ: লাইনে দাঁড়ানো
+
+Stack:
+- LIFO (Last In First Out)  
+- এক প্রান্ত: Top (push এবং pop)
+- উদাহরণ: বইয়ের স্তুপ
+
+প্রশ্ন ২: Array দিয়ে Queue implement করলে সমস্যা কি?
+
+উত্তর:
+
+সমস্যা: shift() operation O(n) সময় নেয়
+কারণ সব elements shift হতে হয়
+
+সমাধান: Object বা Linked List ব্যবহার করা
+যেখানে dequeue O(1) হবে
