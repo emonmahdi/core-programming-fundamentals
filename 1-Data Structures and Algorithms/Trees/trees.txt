@@ -1,0 +1,159 @@
+১. Tree কি?
+
+Tree হলো একটি Hierarchical Data Structure যেখানে ডেটা parent-child relationship এ সাজানো থাকে। এটা উল্টানো গাছের মত দেখতে - root উপরে, leaves নিচে।
+
+মূল Components:
+
+        A          ← Root (মূল node)
+       / \
+      B   C        ← Children of A
+     / \   \
+    D   E   F      ← Leaf nodes (শেষ nodes)
+
+
+গুরুত্বপূর্ণ Terms:
+
+- Root: সবার উপরে node (A)
+- Parent: যার child আছে (A, B, C)
+- Child: যার parent আছে (B, C, D, E, F)
+- Leaf: যার কোনো child নেই (D, E, F)
+- Siblings: একই parent এর children (B & C)
+- Depth: Root থেকে একটা node এর দূরত্ব
+- Height: একটা node থেকে সবচেয়ে দূরের leaf এর দূরত্ব
+
+
+২. Binary Tree কি?
+
+Binary Tree হলো এমন tree যেখানে প্রতিটি node এর maximum 2টি children থাকতে পারে (left child এবং right child)।
+
+        10
+       /  \
+      5    15
+     / \   / \
+    3   7 12  20
+
+Binary Tree এর Types:
+
+1. Full Binary Tree:
+প্রতিটি node এর হয় 0 বা 2টি children
+
+        1
+       / \
+      2   3
+     / \
+    4   5
+
+2. Complete Binary Tree:
+
+শেষ level ছাড়া সব level পূর্ণ, শেষ level বাম থেকে fill
+
+        1
+       / \
+      2   3
+     / \  /
+    4  5 6
+
+3. Perfect Binary Tree:
+
+সব internal nodes এর 2টি children এবং সব leaves একই level এ
+
+        1
+       / \
+      2   3
+     / \ / \
+    4  5 6  7
+
+4. Balanced Binary Tree:
+
+Left এবং Right subtree এর height এর difference সর্বোচ্চ 1
+
+        1
+       / \
+      2   3
+     /
+    4
+
+৩. Binary Search Tree (BST) কি?
+
+BST হলো একটি বিশেষ Binary Tree যেখানে:
+
+- Left subtree এর সব values < Root value
+- Right subtree এর সব values > Root value
+- প্রতিটি subtree নিজেও একটা BST
+
+        50
+       /  \
+      30   70
+     / \   / \
+   20  40 60  80
+
+
+BST এর বৈশিষ্ট্য:
+
+- Sorted order maintain করে
+- Search, Insert, Delete efficient
+- Inorder traversal করলে sorted sequence পাওয়া যায়
+
+
+৪. Tree কেন ব্যবহার করবেন?
+
+সুবিধা (Benefits):
+
+- Hierarchical Structure: Parent-child relationship represent করা
+- Fast Search: O(log n) average case এ search
+- Dynamic Size: Runtime এ grow/shrink করতে পারে
+- Sorted Data: BST automatically sorted রাখে
+- Range Queries: একটা range এর সব elements efficiently পাওয়া যায়
+
+কখন ব্যবহার করবেন:
+
+- File System: Folder structure
+- Database Indexing: B-Trees, B+ Trees
+- Decision Making: Decision trees in AI/ML
+- Auto-complete: Trie trees
+- Expression Parsing: Parse trees
+- Network Routing: Routing tables
+
+
+
+৫. Real Life Examples (বাস্তব উদাহরণ)
+
+Example 1: Family Tree (পারিবারিক বংশলতিকা)
+
+        দাদা/দাদী
+           |
+      _____|_____
+     |           |
+   বাবা        চাচা
+     |           |
+  ___|___     ___|___
+ |       |   |       |
+আমি    ভাই  ভাতিজা ভাতিজি
+
+
+Example 2: Company Organization (কোম্পানি কাঠামো)
+
+            CEO
+            |
+     _______|_______
+    |               |
+  CTO             CFO
+    |               |
+  __|__           __|__
+ |     |         |     |
+Dev  QA       Finance  HR
+
+Example 3: File System (ফাইল সিস্টেম)
+
+
+        Root (/)
+          |
+    ______|______
+   |      |      |
+ home   var    usr
+   |      |
+  user  log
+   |
+  __|__
+ |     |
+docs downloads
